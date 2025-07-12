@@ -1,12 +1,18 @@
-from alpine:latest
+# Minimal Alpine image for testing
+FROM alpine:latest
 
+# Install Python and pip
 RUN apk add --no-cache python3 py3-pip
 
-RUN pip3 install -r requirements.txt --no-cache
-
+# Set working directory
 WORKDIR /app
 
-COPY . /app
+# Copy requirements and install dependencies
+COPY . /app 
+RUN pip3 install --no-cache-dir --break-system-packages -r requirements.txt
 
+# Expose port
+EXPOSE 80 8888
+
+# Run the app
 CMD ["python3", "app.py"]
-EXPOSE 8888
