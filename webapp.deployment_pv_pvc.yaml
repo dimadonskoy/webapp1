@@ -18,3 +18,11 @@ spec:
         image: crooper/webapp:version2
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: webapp-storage
+          mountPath: /tmp 
+      volumes:
+      - name: webapp-storage
+        persistentVolumeClaim:
+          claimName: webapp-pvc
+

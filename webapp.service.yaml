@@ -10,5 +10,5 @@ spec:
   ports:
   - protocol: TCP
     port: 80 # Cluster-internal service port
-    targetPort: 80 # Container's port
+    targetPort: 8888 # Container's port
     nodePort: 8888 # External port exposed on the node
