@@ -9,7 +9,7 @@ image:
 service:
   type: NodePort
   port: 80
-  targetPort: 80
+  targetPort: 8888
   nodePort: 31234
 
 persistence:

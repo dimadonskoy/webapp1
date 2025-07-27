@@ -10,4 +10,4 @@ spec:
   - ReadWriteOnce
   hostPath:
     path: {{ .Values.persistence.path }}
-    type: Directory
+    type: DirectoryOrCreate
