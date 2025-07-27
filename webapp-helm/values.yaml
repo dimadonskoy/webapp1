@@ -1,0 +1,19 @@
+replicaCount: 3
+namespace: webapp
+
+image:
+  repository: crooper/webapp
+  tag: version1
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 80
+  nodePort: 31234
+
+persistence:
+  enabled: true
+  size: 1Gi
+  path: /tmp/pod_storage
+  storageClass: manual

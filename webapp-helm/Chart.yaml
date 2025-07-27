@@ -1,0 +1,7 @@
+apiVersion: v2
+name: webapp
+description: A Helm chart for Kdeploying webapp
+type: application
+
+version: 0.0.1
+appVersion: "1.0"

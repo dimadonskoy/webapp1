@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: webapp-pv
+spec:
+  storageClassName: {{ .Values.persistence.storageClass }}
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: {{ .Values.persistence.path }}
+    type: Directory
