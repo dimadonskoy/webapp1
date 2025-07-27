@@ -4,11 +4,15 @@ metadata:
   name: webapp-pv
   namespace: webapp
 spec:
-  storageClassName: manual
   capacity:
-    storage: 2Gi
+    storage: 1Gi
+  volumeMode: Filesystem
   accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: "/tmp/pod_storage"
-    type: Directory
+   - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  mountOptions:
+    - hard
+    - nfsvers=4.1
+  nfs:
+    path: /home/vagrant/classtask/nfsshare
+    server: controller
